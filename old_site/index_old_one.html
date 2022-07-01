@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:site_name" content="Bryanna Lucyk - portfolio">
+        <meta property="og:type" content="website">
+        <meta name="theme-color" content="#205072">
+        <meta name="description" content="Hi! I'm Bryanna. I'm learning to code. This is a home for my projects & experiments." />
+        <title>bryanna lucyk - portfolio & experiments</title>
+        <link href="high-contrast.css" rel="stylesheet" media="screen"> <!-- fixes reposition issue in Firefox/Edge -->
+        <link href="normal.css" rel="stylesheet" media="screen" id="pagestyle">
+        <script src="main.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Share+Tech+Mono&family=Exo+2:wght@100&family=Barlow+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    </head>
+
+    <body onload="spawnWords()">
+
+      <div id="mouseTrail" class="normalTrail"></div>
+
+      <div id="container">
+
+        <div id="side-1"><a href='side1/index.html'>Side 1:// <br>Experiments</a></div>
+        <div id="side-2"><a href='side2/portfolio.html'>Side 2:// <br>Portfolio</a></div>
+
+        <div id="control-panel">
+          <button id="contrast" onclick="changeContrast()"><i class="material-icons">add</i> CONTRAST</button>
+          <button id="motion" onclick="controlMotion()"><i class="material-icons">pause</i> MOTION</button>
+        </div>
+
+        <div id="letter-b"><a href="side2/about.html">B</a></div>
+
+      </div>
+
+      </body>
+  </html>
