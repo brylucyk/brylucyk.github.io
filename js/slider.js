@@ -14,8 +14,8 @@ $('.slide-nav').on('click', function (e) {
         $('.slider-wrapper').find('.slider-container[data-slide=' + next + ']').addClass('flex-before');
         $('.flex-active').addClass('animate--end');
         setTimeout(function () {
-            $('.flex-before').removeClass('animate--start flex-before').addClass('flex-active');
             $('.animate--end').addClass('animate--start').removeClass('animate--end flex-active');
+            $('.flex-before').removeClass('animate--start flex-before').addClass('flex-active');
         }, 50);
     }
 });

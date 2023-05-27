@@ -18,6 +18,9 @@
   -o-transition: all 0.25s ease-in;
   cursor: pointer;
 }
+.mobile {
+  width: 20% !important;
+}
 
 .img-wrapper {
   position: relative;
