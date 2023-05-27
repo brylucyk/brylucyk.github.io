@@ -86,6 +86,14 @@ const projects = {
         "web": 0,
         "mobile": 9,
         "ext": ".png"
+    },
+    "garden_planner": {
+        "title": "Garden Planner",
+        "description": "I made this to learn Angular, Material Design & TypeScript. Also, I needed a little app to plan my garden.",
+        "architecture": "Angular, Material Design, TypeScript, JSON server for local data storage",
+        "web": 7,
+        "mobile": 0,
+        "ext": ".png"
     }
 };
 

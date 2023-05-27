@@ -90,6 +90,10 @@ h1,
   font-size: 0.7em;
 }
 
+p {
+  font-family: "Public Sans";
+}
+
 /* links */
 
 a {
