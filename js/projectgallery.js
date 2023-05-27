@@ -1,25 +1,43 @@
 const projects = {
     "cho": {
+        "title": "Community Homes for Opportunity",
+        "description": "Website created for Lawson Health Research Institute for the Community Homes for Opportunity project. Built minimally to accommodate web host restrictions.",
+        "architecture": "HTML, CSS, JavaScript",
         "web": 2,
         "mobile": 0
     },
     "h2i": {
+        "title": "Health, Housing and Income",
+        "description": "Website created for Lawson Health Research Institute for the Community Homes for Opportunity project. Built minimally to accommodate web host restrictions.",
+        "architecture": "HTML, CSS, JavaScript",
         "web": 2,
         "mobile": 1
     },
     "kitchen_store": {
+        "title": "The Kitchen Store",
+        "description": "A mobile-first, responsive, e-commerce application.",
+        "architecture": "ASP.NET Core with C#.NET, Vue.JS, PrimeVue, Azure SQL Server",
         "web": 0,
         "mobile": 4
     },
     "retrowave_name_generator": {
+        "title": "Retrowave Name Generator",
+        "description": "Experimenting with gradients and css animations.",
+        "architecture": "HTML, CSS, JavaScript",
         "web": 1,
         "mobile": 1
     },
     "smarter_goals": {
-        "web": 1,
+        "title": "Smarter Goals",
+        "description": "A goal-tracking app.",
+        "architecture": "Angular Apollo & GraphQL, TypeScript, SCSS",
+        "web": 3,
         "mobile": 0
     },
     "telepromy": {
+        "title": "TELEPROM-Y",
+        "description": "Website created for Lawson Health Research Institute as part of the knowledge translation program for the TELEPROM-Y project. Built minimally to accommodate web host restrictions.",
+        "architecture": "HTML, CSS",
         "web": 1,
         "mobile": 0
     }
@@ -62,6 +80,12 @@ $(".img-overlay").click(function (event) {
     const urlParts = imageLocation.split("_recording");
     const project = urlParts[0].split("./images/screenshots/");
 
+    const $blurb = $('<div id="blurb"></div>');
+    $blurb.append(`<h1>${projects[project[1]]["title"]}</h1>`);
+    $blurb.append(`<p>${projects[project[1]]["description"]}</p>`);
+    $blurb.append(`<p><b>Built with:</b> ${projects[project[1]]["architecture"]}</p>`);
+    $main.append($blurb);
+
     for (let i = 0; i < projects[project[1]]["web"]; i++) {
         const $image = $(`<img src="./images/screenshots/${project[1]}_recording_web_${i + 1}.gif" class="web-screenshot">`);
         $main.append($image);
@@ -78,12 +102,6 @@ $(".img-overlay").click(function (event) {
 
     $overlay.fadeIn("slow");
 });
-
-// // When the overlay is clicked
-// $overlay.click(function () {
-//     // Fade out the overlay
-//     $(this).fadeOut("slow");
-// });
 
 // When next button is clicked
 $nextButton.click(function (event) {

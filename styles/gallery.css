@@ -94,11 +94,13 @@
 }
 
 #overlay #main img {
-  /* -o-object-fit: contain;
-  object-fit: contain; */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   margin: 2% 0;
   padding: 0;
+}
+
+#blurb {
+  padding: 5% 5% 0 5%;
 }
 
 .web-screenshot {
