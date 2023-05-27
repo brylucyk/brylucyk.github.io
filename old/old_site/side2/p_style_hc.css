@@ -1,0 +1,744 @@
+/* --- HIGH CONTRAST STYLESHEET --- */
+
+/* --- main styling is for larger screens --- */
+header, nav, section, aside, footer {
+    display: block;
+  }
+
+body {
+    background-color: #aaa;
+    color: #000;
+    font-family: 'Krub', sans-serif;
+    font-size: 1.1em;
+    line-height: 2rem;
+    font-weight: 300;
+    background-image: url(geometricbg.png);
+  }
+
+h1 {
+    color: #036162;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    font-size: 5rem;
+    line-height: 5rem;
+    margin: 0;
+  }
+
+h1::after {
+    content: "";
+    display: block;
+    border-bottom: 5px solid #036162;
+    width: 3rem;
+  }
+
+h2 {
+    font-family: 'Roboto Mono', monospace;
+    color: #222;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 300;
+    text-align: right;
+  }
+
+h2::after {
+  content: "";
+  display: block;
+  border-bottom: 5px solid #222;
+  width: 10%;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  float: right;
+}
+
+h3 {
+    font-family: 'Roboto Mono', monospace;
+    color: #0f6061;
+    margin-top: 0px;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+  }
+
+a {
+    color: #0f6061;
+    text-decoration: none;
+    border-bottom: 2px solid #0f6061;
+  }
+
+a:hover {
+    color: #036162;
+    border-bottom: 1px dashed #036162;
+  }
+
+.contact-icons {
+    border: 0;
+}
+
+.contact-icons:hover {
+  border-bottom: 0;
+}
+
+.icon-grow {
+  transition: all .2s ease-in-out;
+}
+
+.icon-grow:hover {
+ transform: scale(1.4);
+}
+
+.contact-line {
+  margin-top: 5%;
+}
+
+.contact-space-around {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#github:hover {
+  fill: #6cc644;
+}
+
+#linkedin:hover {
+  fill: #0077B5;
+}
+
+#codepen:hover {
+  stroke: #ffd600;
+}
+
+img {
+    border: 10px solid #111;
+    width: 95%;
+    opacity: .8;
+  }
+
+img:hover {
+  opacity: 1;
+}
+
+/* for image links */
+.aimg, .aimg:hover {
+  border-bottom: 0;
+}
+
+#inner ul li {
+    list-style: square;
+  }
+
+#inner .material-icons {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+.material-icons {
+  text-shadow: none;
+  cursor: pointer;
+  line-height: 1.5rem;
+}
+
+#icon {
+  line-height: 1.5rem;
+}
+
+.cuties {
+  color: #e56d8b;
+  cursor: url('feathercurs.cur'), auto;
+  font-weight: 400;
+}
+
+.forrest-fen {
+  color: #fff;
+  cursor: url('fen.cur'), auto;
+  font-weight: 400;
+  text-shadow: 0 0 10px #000;
+}
+
+/* --- screen frame and glass --- */
+
+#screen-frame, #screen-overlay, #screen-container {
+    position: absolute;
+    top: 0px;
+    left: calc(10vw - 2.5vh); /* account for border width */
+    height: 85vh;
+    margin-top: 5vh;
+    background-color: RGBA(255,255,255,.5);
+  }
+
+#screen-frame {
+    width: 80vw;
+    z-index: 2;
+    border: 2.5vh solid #000;
+    border-radius: 2%;
+    box-shadow: -1px -1px 10px -2px #000;
+  }
+
+#screen-overlay {
+    width: 82vw; /* needs to be a little bigger due to a scrollbar "feature" in Microsoft Edge */
+    z-index: 1;
+    border-radius: 2%;
+  }
+
+#screen-container {
+    width: 80vw;
+    z-index: 2;
+    border: 2.5vh solid #000;
+    border-radius: 2%;
+  }
+
+/* --- content --- */
+
+content {
+    z-index: 5;
+    position: absolute;
+    top: 72px;
+    height: auto;
+    bottom: 0px;
+    margin-bottom: 34px;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+#inner {
+    width: 90%;
+    height: 90%;
+    z-index: 5;
+  }
+
+.scroll {
+    scrollbar-width: auto;
+    scrollbar-color: #000 transparent;
+  }
+
+.scroll::-webkit-scrollbar {
+    width: 12px;
+  }
+
+.scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border: 0px;
+  }
+
+/* -- browser tabs -- */
+
+#toolbar-container {
+    z-index: 3;
+    position: absolute;
+    top: 0px;
+    height: 80%;
+    width: 100%;
+  }
+
+#tab-bar {
+    z-index: 3;
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    line-height: 2;
+  }
+
+#active-tab {
+    width: 10%;
+    height: 36px;
+    border-right: 1px solid #242529;
+    float: left;
+  }
+
+.non-active-tab {
+    width: 10%;
+    height: 35px;
+    border-right: 1px solid #242529;
+    border-bottom: 1px solid #242529;
+    background-color: RGBA(30,34,42,.2);
+    float: left;
+  }
+
+#active-tab-last {
+    width: 10%;
+    height: 35px;
+    border-right: 1px solid #242529;
+    border-bottom: 1px solid #242529;
+    float: left;
+  }
+
+#active-tab a, #active-tab-last a {
+    color: #036162;
+    border-bottom: none;
+    text-shadow: none;
+  }
+
+.non-active-tab a {
+    color: #000;
+    border-bottom: none;
+    text-shadow: none;
+  }
+
+.non-active-tab:hover, .non-active-tab:hover a, .non-active-tab a:hover {
+    color: #fff;
+    background-color: #222;
+  }
+
+/* --- browser tools and address bars --- */
+
+#top-toolbar {
+    z-index: 4;
+    position: relative;
+    top: 35px;
+    left: 0px;
+    width: 100%;
+    height: 36px;
+    font-size: 20pt;
+    line-height: 1.2;
+    border-bottom: 1px solid #242529;
+    text-shadow: 1px 1px 10px #000;
+    float: left;
+  }
+
+#browser-buttons a {
+    padding-left: 2%;
+    border-bottom: 0;
+  }
+
+#browser-buttons .material-icons {
+    color: #000;
+    line-height: inherit;
+    padding-top: 4px;
+  }
+
+#browser-buttons .material-icons:hover {
+    color: #036162;
+  }
+
+#address-bar {
+    z-index: 4;
+    width: 70%;
+    height: 25px;
+    border: 1px solid #242529;
+    position: relative;
+    top: 5px;
+    float: right;
+    font-size: 10pt;
+    line-height: 2;
+    background-color: RGBA(30,34,42,.2);
+    text-shadow: none;
+    margin-right: 2%;
+  }
+
+/* --- bottom toolbar --- */
+
+#bottom-toolbar {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    width: 101%;
+    height: 35px;
+    background-color: #000;
+  }
+
+#icon {
+    width: auto; /* reset when width adjusts */
+    height: auto;
+    font-size: 15pt;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 12px;
+    z-index: 6;
+    cursor: pointer;
+  }
+
+#icon a {
+    color: #fff;
+    border-bottom: none;
+  }
+
+#icon a:hover {
+  color: #036162;
+  border-bottom: none;
+}
+
+#fake-search {
+    width: 150px;
+    height: 14px;
+    background-color: #222;
+    position: absolute;
+    bottom: 0px;
+    left: 3px;
+    margin-left: 50px;
+    line-height: .8;
+    padding: 10px;
+    z-index: 6;
+    color: #fff;
+  }
+
+#fake-search-expand a {
+    color: #fff;
+    text-shadow: none;
+  }
+
+#fake-search-expand {
+    width: 170px;
+    line-height: 1;
+    background-color: #000;
+    position: absolute;
+    bottom: 35px;
+    left: 3px;
+    margin-left: 50px;
+    z-index: 6;
+    display: none;
+  }
+
+#fake-search-expand ul, li {
+    margin: 0;
+    line-height: 2rem;
+    list-style: none;
+  }
+
+#fake-search-expand ul {
+    padding: 0;
+  }
+
+#fake-search-expand li {
+    padding: 1% 5% 0% 5%;
+    border-bottom: 1px solid #333;
+  }
+
+#fake-search-expand li a:hover {
+    border: none;
+  }
+
+#fake-search-expand li:hover {
+    background-color: #a7aaad;
+    color: #000;
+  }
+
+#time {
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    line-height: .9;
+    color: #fff;
+  }
+
+/* --- sleep mode --- */
+
+#sleepDisplay {
+    display: none;
+    width: 100%;
+    height: 80%;
+    z-index: 5;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+#sleepDisplay .material-icons {
+    font-size: 25vh;
+    padding: 0;
+    margin: 0;
+    color: RGBA(0,0,0,.3);
+    text-align: center;
+  }
+
+/* --- contact page --- */
+
+#contact {
+    z-index: 3;
+    position: absolute;
+    top: 72px;
+    height: auto;
+    bottom: 0px;
+    margin-bottom: 35px;
+    width: 100%;
+    opacity: .75;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-image:url(contactbg.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+input {
+  	height: 18px;
+  	background-color: #1E222A;
+  	border: 0px;
+    color: #C8CBD5;
+    font-family: 'Inria Sans', monospace;
+    font-size: 100%;
+    padding: 5px;
+  }
+
+.textfield {
+    width: 250px;
+  }
+
+textarea {
+  	background-color: #1E222A;
+  	border: 0px;
+    width: 250px;
+    color: #C8CBD5;
+    font-family: 'Inria Sans', monospace;
+    font-size: 90%;
+    padding: 5px;
+  }
+
+#button {
+    padding: 5px;
+    height: 30px;
+  }
+
+/*-- portfolio page --*/
+
+.example {
+  float: left;
+  width: 46%;
+  margin: 2% 2% 2% 2%;
+}
+
+/*-- about page --*/
+.about-pic {
+  border: 0; 
+  margin-top: 
+  20px; 
+  margin-bottom: 20px; 
+  margin-right: 50px; 
+  width: auto; 
+  float: left;
+}
+
+
+/* --- styling for tablets/smaller screens ---*/
+
+@media screen and (max-width: 1200px) {
+    #contact {
+      background-size: 95%;
+      background-position: right center;
+    }
+
+    .contact-space-around {
+      width: 100%;
+    }
+  }
+
+/* --- styling for phones ---*/
+
+@media screen and (max-width: 880px) {
+    /*-- about page --*/
+    .about-pic {
+      float: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    h1::after {
+      width: 2rem;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+
+    h2::after {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: .5rem;
+      width: 5rem;
+    }
+
+    .example {
+      width: 98%;
+      margin: 2% 0 2% 0;
+    }
+
+    #inner {
+      width: 85%;
+      margin-right: 5%;
+      margin-left: 5%;
+    }
+
+    .scroll {
+      scrollbar-width: thin;
+    }
+
+    .scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #contact {
+      background-image: none;
+    }
+
+    #sleepDisplay .material-icons {
+      margin-left: 0%;
+      margin-top: -10%;
+    }
+
+    /* contact */
+    #find-me {
+      display: none;
+    }
+
+    .contact-space-around {
+      margin-top: 10%;
+    }
+
+    /* site navigation */
+    #top-toolbar {
+      position: absolute;
+      top: 0px;
+      background-image: linear-gradient(RGBA(100,100,100,.4), RGBA(10,10,10,.05));
+      background-color: #fff;
+      color: #949698;
+      border-bottom: 1px solid #888;
+    }
+
+    #tab-bar {
+      z-index: 3;
+      width: 100%;
+      height: 35px;
+      position: absolute;
+      top: 36px;
+      left: 0px;
+      border-bottom: 1px solid #333;
+    }
+
+    #active-tab, #active-tab-last {
+      width: 25%;
+      height: 35px;
+      text-align: center;
+      float: left;
+      border: none;
+      background-image: linear-gradient(RGBA(10,10,10,.4), RGBA(100,100,100,.4), RGBA(10,10,10,.4));
+      background-color: #fff;
+    }
+
+    .non-active-tab {
+      width: 25%;
+      height: 35px;
+      text-align: center;
+      float: left;
+      background-image: linear-gradient(RGBA(100,100,100,.4), RGBA(80,80,80,.1), RGBA(100,100,100,.4));
+      background-color: #fff;
+      border: none;
+    }
+
+    #active-tab a, #active-tab-last a, .non-active-tab a {
+      color: #000;
+    }
+
+    .non-active-tab:hover a, #active-tab:hover a, #active-tab-last:hover a {
+      color: #333;
+    }
+
+    .non-active-tab:hover {
+      background-color: #fff;
+      background-image: linear-gradient(RGBA(10,10,10,.4), RGBA(100,100,100,.4), RGBA(10,10,10,.4));
+    }
+
+     .non-active-tab:hover a, .non-active-tab a:hover {
+      background: none;
+    }
+
+    /* browser navigation */
+    #address-bar {
+      width: 60%;
+      color: #3A3C3D;
+      border: none;
+    }
+
+    /* phone footer */
+    #bottom-toolbar {
+      background-image: linear-gradient(to top, RGBA(100,100,100,.4), RGBA(10,10,10,.05));
+      background-color: #fff;
+      border-top: none;
+      width: 100%;
+      left: 0px;
+    }
+
+    #icon {
+      color: #797979;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    #browser-buttons {
+      display: flex;
+      justify-content: space-around;
+    }
+
+   #browser-buttons .material-icons, #icon a {
+      color: #000;
+      cursor: pointer;
+    }
+
+    #browser-buttons .material-icons:hover, #icon a:hover {
+      color: #036162;
+    }
+
+    #fake-search {
+      width: 0;
+      display: none;
+    }
+
+    #fake-search-expand {
+      display: none;
+    }
+
+    #time {
+      display: none;
+    }
+  }
+
+/* --- styling for the teeniest of viewports --- */
+
+@media screen and (max-width: 500px) {
+    #screen-overlay {
+      width: 85vw;
+    }
+
+    #address-bar {
+      display: none;
+    }
+
+    #browser-buttons {
+      width: 95%;
+    }
+
+    #sleepDisplay .material-icons {
+      font-size: 15vh;
+    }
+
+  }

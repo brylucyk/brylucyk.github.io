@@ -1,546 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>Bry Lucyk</title>
-    <meta name="description" content="Web developer." />
-    <meta name="keywords" content="web developer, portfolio, computer programmer" />
-
-    <!-- material design lite-->
-    <link rel="stylesheet" href="material-design/material.min.css">
-    <script src="material-design//material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <!-- font awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-    <!-- base stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
-    
-    <!-- floating code -->
-    <link rel="stylesheet" type="text/css" href="css/floatingcode.css" />
-
-    <!-- themed stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/dark.css" id="themeStyle">
-    <script src="js/swapstyles.js"></script>
-
-    <!-- page transitions -->
-    <link rel="stylesheet" type="text/css" href="css/animations.css" />
-    <script src="js/modernizr.custom.js"></script>
-
-    <!-- gallery js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/gallery.css" />
-
-</head>
-<body>
-    <div class="overlay"></div> <!-- /modal backdrop-->
-
-    <div id="code"></div> <!-- /floating code -->
-
-    <div id="toggle-motion">
-        <span class="material-icons" id="motionToggler">
-            pause_circle_outline
-        </span>
-    </div> <!-- /toggle-motion -->
-
-    <div id="social-links">
-        <a href="https://github.com/brylucyk" target="new"><i class="nav-icon fab fa-github"></i></a>
-        <a href="https://codepen.io/b-r-y" target="new"><i class="nav-icon fab fa-codepen"></i></a>
-        <a href="https://ca.linkedin.com/in/bryanna-lucyk" target="new"><i class="nav-icon fab fa-linkedin"></i></a>
-    </div> <!-- /social links -->
-
-    <div class="mobile-nav">
-        <div class="pt-triggers">
-            <div id="dl-menu-small" class="dl-menuwrapper">
-                <ul id="trigger-menu" class="dl-menu" for="menu-toggle">
-                    <button id="menu-toggle" class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mobile-links">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="menu-toggle">
-                        <li id="about-li" class="trigger-li" data-location="about" data-animation="1">about</li>                      
-                        <li id="projects-li" class="trigger-li" data-location="projects" data-animation="2">projects</li>
-                        <li id="contact-li" class="trigger-li" data-location="contact" data-animation="3">contact</li>
-                        <li id="home-li" class="trigger-li" data-location="home" data-animation="4">home</li>
-                    </ul>
-                </ul><!-- /trigger-menu -->
-            </div><!-- /dl-menu -->
-        </div><!-- /pt-triggers -->
-    
-        <div id="togglers">
-            <span class="material-icons" id="smallMotionToggler">
-                pause_circle_outline
-            </span>
-            <span class="material-icons" onclick="toggleStyle(this);">
-                light_mode
-            </span></li>
-        </div><!-- /togglers -->
-    </div> <!-- /mobile nav -->
-
-    <div class="pt-triggers large-screens">
-        <div id="dl-menu" class="dl-menuwrapper">
-            <ul id="trigger-menu" class="dl-menu" for="menu-speed">
-                <li id="about-li" class="trigger-li" data-location="about" data-animation="1">about</li>
-                <li id="projects-li" class="trigger-li" data-location="projects" data-animation="2">projects</li>
-                <li id="contact-li" class="trigger-li" data-location="contact" data-animation="3">contact</li>
-                <li id="home-li" class="trigger-li" data-location="home" data-animation="4"><i class="fas fa-home"></i></li>
-                <li>
-                    <button id="menu-theme" class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                    Theme
-                  </button>
-                  <ul class="mdl-menu mdl-menu--top-left mdl-js-menu" for="menu-theme">                      
-                    <li class="mdl-menu__item" onclick="swapStyle('light');">
-                        Light 
-                        <span class="material-icons light-mode">
-                        light_mode
-                        </span></li>
-                    <li class="mdl-menu__item" onclick="swapStyle('dark');">
-                        Dark
-                        <span class="material-icons">
-                            dark_mode
-                        </span></li>
-                  </ul>
-                </li>
-            </ul> <!-- /trigger-menu -->
-        </div><!-- /dl-menu-wrapper-->
-    </div><!-- /pt-triggers (large nav) -->
-
-    <div id="pt-main" class="pt-perspective">
-        
-        <div id="home" class="pt-page pt-page-1">
-            <h1>Bry Lucyk</h1>
-            <h2>< web developer /></h2>
-        </div><!-- /home -->
-
-        <div id="about" class="pt-page pt-page-2">
-            <h1>Hi, I'm Bry!<small>(she/her)</small></h1> 
-            <section>  
-                <h2>I am a:</h2>
-                <ul>
-                    <li><a href="https://www.fanshawec.ca/programs/cpa3-computer-programming-and-analysis" target="new">Computer Programming & Analysis student</a> studying object-oriented, full-stack development;</li>
-                    <li>Software Developer at <a href="https://www.sjhc.london.on.ca/" target="new">St. Joseph's Healthcare London</a>, helping to create a clinical and research platform for brain injury and spinal cord rehabilitation; and</li>
-                    <li>a <a class="tooltip" id="previous-education">life-long learner</a> with a background in <a class="tooltip" id="health-research">health research</a> who loves experimenting with new styles, approaches and technologies.</li>
-                </ul>
-
-                <p>More importantly, I'm a dog mom, a bird mom, and a fan of <a class="tooltip" id="unsolved">mysteries</a>.</p>
-               
-                <h3>Languages:</h3>
-                <p>JavaScript, PHP, HTML/HTML5, CSS, XML, SQL, Java, C#, C++, C, COBOL</p>
-                <h3>Frameworks & Libraries:</h3>
-                <p>Laravel, Livewire, Vue.js, Node.js, React JS, jQuery, Bootstrap, PrimeVue, Java Swing, JavaFX</p>
-             
-                <!-- tooltips -->
-                <div class="mdl-tooltip mdl-tooltip--large" for="previous-education">
-                    <strong>Previous Education:</strong>
-                    <br />Hons. B.A. Psychology, 2014
-                    <br />Hons. B.A. Thanatology & English Literature, 2016
-                </div>
-
-                <div class="mdl-tooltip mdl-tooltip--large" for="health-research">
-                    <strong>Research Coordinator for ~4.5 years</strong>
-                    <br />Projects related to mental health, smart technology & homelessness
-                </div>
-
-                <div class="mdl-tooltip mdl-tooltip--large" for="unsolved">
-                    Preferably unsolved. 
-                    <br /><i class="far fa-heart"></i> Robert Stack
-                </div>
-                <!-- /tooltips -->
-
-            </section>
-        </div> <!--  /about -->
-
-        <div id="projects" class="pt-page pt-page-3" style="overflow: scroll;">
-            <h1>projects</h1>
-            <section class="gallery">    
-
-                <small class="projects-note">Psst ... Check out more front-end experiments on <a href="https://codepen.io/b-r-y" target="new"><i class="nav-icon fab fa-codepen"></i> CodePen</a></small>
-    
-                <div class="row">
-                    <ul>
-                        <li>
-                            <a href="#chris">
-                                <img src="screenshots/chris.png" alt="Screenshot of the CHRIS landing screen.">
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#pandemicsimulator">
-                                <img src="screenshots/pandemicsimulator_small.png"
-                                    alt="Screenshot of the Pandemic Simulator program.">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#kitchenstore">
-                                <img src="screenshots/kitchenstore.png"
-                                    alt="Screenshot of the Kitchen Store app, showing available products.">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#telepromy">
-                                <img src="screenshots/telepromy.png"
-                                    alt="Screenshot of the TELEPROM-Y website, showing a mobile phone displaying the TELEPROM-Y app.">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#cho">
-                                <img src="screenshots/cho.png"
-                                    alt="Screenshot of the landing page of the Community Homes for Opportunity website.">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#h2i">
-                                <img src="screenshots/h2i.png"
-                                    alt="Screenshot of the landing page of the Health, Housing and Income (H2I) website.">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#retrowave">
-                                <img src="screenshots/retrowavegenerator.png"
-                                    alt="Screenshot of the Retrowave Name Generator, showing a night-time cityscape with neon signs.">
-                            </a>
-                        </li>
-                        <li>
-                        <a href="#rescuematch">
-                                <img src="screenshots/rescuematch.png"
-                                    alt="Screenshot of the RescueMatch website, showing an image of a dog.">
-                            </a>
-                        </li>
-                    </ul>
-                </div><!-- /row -->
-                <div class="row sm-mobile">
-                    <ul>
-                        <li>
-                            <a href="#pupdate">
-                                <img src="screenshots/pupdate.png"
-                                    alt="Screenshot of the PUPDate mobile app, with a puppy logo.">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#birthdaytracker">
-                                <img src="screenshots/birthdaytracker.png"" alt=" Screenshot of the BirthdayTracker mobile
-                                    app, which a cupcake logo.">
-                            </a>
-                        </li>
-                    </ul>
-                </div><!-- /row -->
-            </section><!-- /gallery -->
-        </div> <!-- /projects -->
-
-        <div id="contact" class="pt-page pt-page-4">
-            <h1>get in touch</h1>
-            <section> 
-                <i class="far fa-paper-plane"></i> <a href="mailto:hi@brylucyk.com">hi@brylucyk.com</a> 
-                <p class="mt">Based in Canada <i class="fab fa-canadian-maple-leaf"></i></p>
-                <div id="contact-social-links">
-                    <a href="https://github.com/brylucyk" target="new"><i class="nav-icon fab fa-github"></i></a>
-                    <a href="https://codepen.io/b-r-y" target="new"><i class="nav-icon fab fa-codepen"></i></a>
-                    <a href="https://ca.linkedin.com/in/bryanna-lucyk" target="new"><i class="nav-icon fab fa-linkedin"></i></a>
-                </div>
-            </section>
-        </div><!-- /contact -->
-
-    </div> <!-- /main-->
-
-    <!-- modals -->
-        <div id="chris" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            CHRIS
-                            <span class="right"><a href="mailto:hi@brylucyk.com" class="button"><i
-                                        class="fas fa-envelope"></i> Demo available upon request.</a></span>
-                        </h1>
-                        <span class="tools">Laravel/Livewire (PHP), jQuery, Bootstrap</span>
-                        <p>A web-based clinical and research platform currently being developed for <a
-                                href="https://www.sjhc.london.on.ca/" target="new">St. Joseph's Healthcare
-                                London</a>. My responsibilities have included coding various clinical assessments
-                            and tools, as well as
-                            building a custom therapeutic activity tracking system. I am currently revamping the
-                            platform's appearance, redesigning the system flow to include customizable therapist and
-                            patient dashboards, and creating a patient alert system.</p>
-                    </div>
-                    <img src="screenshots/chris1.png" alt="Screenshot of the CHRIS login screen.">
-                    <img src="screenshots/chris.png"
-                        alt="Screenshot of the CHRIS landing screen, which prompts the user to select a clinical program.">
-                    <img src="screenshots/chris3.png" alt="Screenshot of the CHRIS patient dashboard.">
-                </div>
-            </div>
-        </div><!-- /CHRIS -->
-
-        <div id="pandemicsimulator" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>Pandemic Simulator <span class="right"><a href='mailto:hi@brylucyk.com'
-                                    class="button"><i class="fas fa-envelope"></i>
-                                    Demo available upon request.</a></h1>
-                        <span class="tools">Java, JavaFX</span>
-                        <p>A Java program that visualizes the spread of a disease in a given population over a
-                            three-week period. A final group project completed for INFO 3136: Mobile
-                            Development/Advanced Java. I was responsible for the UI layout, components and general
-                            styling; my team-mates added the functionality for input, simulation, and reporting
-                            components.</p>
-                    </div>
-
-                    <img src="screenshots/pandemicsimulator_lg1.png"
-                        alt="Screenshot of the 'About' page of the Pandemic Simulator Application, showing the authors.">
-                    <img src="screenshots/pandemicsimulator_lg2.png"
-                        alt="Screenshot of the Pandemic Simulator application running a simulation.">
-                </div>
-            </div>
-        </div><!-- /pandemic simulator -->
-
-        <div id="foodandthought" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            food & thought
-                        </h1>
-                        <span class="tools">Node.js, React JS, Express.js, Mongo DB</span>
-                        <p>A website template for a blogging collective allowing contributions by multiple users.
-                        </p>
-                        <p>Demo coming soon!</p>
-                    </div>
-
-                    <img src="screenshots/foodandthought.png"
-                        alt="Screenshot of the food & thought site, which has a header that is a photo of blueberries.">
-                </div>
-            </div>
-        </div><!-- /food & thought -->
-
-        <div id="kitchenstore" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            The Kitchen Store
-                            <span class="right"><a href='https://blucyk2021.azurewebsites.net/' class="button"
-                                    target="new">Demo</a></span>
-                        </h1>
-                        <span class="tools">ASP.NET Core with C#.NET, Vue.js, PrimeVue, Azure SQL Server</span>
-                        <p>A mobile-first, responsive, e-commerce application. This was my final project for
-                            INFO-3067:
-                            ASP.NET Programming with C#. Feel free to play around with the <a
-                                href="https://blucyk2021.azurewebsites.net" target="new">sandbox</a>!</p>
-                    </div>
-
-                    <img src="screenshots/kitchenstore.png"
-                        alt="Screenshot of the Kitchen Store app, showing available products.">
-                </div>
-            </div>
-        </div><!-- end /kitchen store -->
-
-        <div id="telepromy" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            TELEPROM-Y
-                            <span class="right"><a href='https://publish.uwo.ca/~cforchuk/TELEPROM-Y/'" class="
-                                    button" target="new">Visit</a></span>
-                        </h1>
-                        <span class="tools">HTML, CSS</span>
-                        <p>Website created for <a href="https://www.lawsonresearch.ca/" target="new">Lawson Health
-                                Research
-                                Institute</a> as part of the knowledge translation
-                            program for the TELEPROM-Y project. Built minimally with HTML and CSS to accommodate web
-                            host restrictions.</p>
-                    </div>
-
-                    <img src="screenshots/telepromy.png"
-                        alt="Screenshot of the TELEPROM-Y website, showing a mobile phone displaying the TELEPROM-Y app."
-                        target="new">
-                </div>
-            </div>
-        </div><!-- /TELEPROM-Y -->
-
-        <div id="cho" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            Community Homes for Opportunity
-                            <span class="right"><a href='https://publish.uwo.ca/~cforchuk/CHO/' class="button"
-                                    target="new">Visit</a></span>
-                        </h1>
-                        <span class="tools">HTML, CSS, JavaScript</span>
-                        <p>Website created for <a href="https://www.lawsonresearch.ca/" target="new">Lawson Health
-                                Research
-                                Institute</a> for the Community Homes for Opportunity
-                            project. Built minimally with HTML, CSS & Vanilla JavaScript to accommodate web host
-                            restrictions.</p>
-                    </div>
-
-                    <img src="screenshots/cho.png" target="new"
-                        alt="Screenshot of the landing page of the Community Homes for Opportunity website.">
-                </div>
-            </div>
-        </div> <!-- end Community Homes for Opportunity -->
-
-        <!-- H2I -->
-        <div id="h2i" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            <span>Health, Housing and Income (H<sup>2</sup>I)</span>
-                            <span class="right"><a href='https://publish.uwo.ca/~cforchuk/H2I/' target="new"
-                                    class="button">Visit</a></span>
-                        </h1>
-                        <span class="tools">HTML, CSS, JavaScript</span>
-                        <p>Website created for <a href="https://www.lawsonresearch.ca/" target="new">Lawson Health
-                                Research
-                                Institute</a> for the project: "A collaboration to address homelessness:
-                            Health, Housing and Income (H<sup>2</sup>I)" as part of the knowledge translation and
-                            participant recruitment strategy. Built minimally with HTML, CSS & Vanilla JavaScript to
-                            accommodate web host
-                            restrictions.</p>
-                    </div>
-
-                    <img src="screenshots/h2i.png"
-                        alt="Screenshot of the landing page of the Health, Housing and Income (H2I) website.">
-                </div>
-            </div>
-        </div> <!-- /h2i-->
-
-        <div id="retrowave" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            Retrowave Name Generator
-                            <span class="right"><a href='Retrowave/retrowave_ng.html'
-                                    class="button" target="new">Visit</a></span>
-                        </h1>
-                        <span class="tools">HTML, CSS, JavaScript</span>
-                        <p>Experimenting with gradients and css animations. Best viewed in Firefox.</p>
-                    </div>
-
-                    <img src="screenshots/retrowavegenerator.png"
-                        alt="Screenshot of the Retrowave Name Generator, showing a night-time cityscape with neon signs.">
-                </div>
-            </div>
-        </div><!-- /retrowave -->
-
-        <!-- RescueMatch -->
-        <div id="rescuematch" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>
-                            <span>RescueMatch</span>
-                            <span class="right"><a href='https://rescuematch.ca' target="new"
-                                    class="button">Visit</a></span>
-                        </h1>
-                        <span class="tools">Laravel & Livewire</span>
-                        <p>A full-scale pet adoption app that I am currently working on with my friend, Brandon. It is still under construction, so be sure to check back!</p>
-
-                         <img src="screenshots/rescuematch.png"
-                        alt="Screenshot of the RescueMatch landing page, featuring a corgi.">
-                    </div>
-                </div>
-            </div>
-        </div> <!-- /rescuematch-->
-
-        <div id="horrormovietracker" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>Horror Movie Tracker</h1>
-                        <span class="tools">Laravel/Livewire (PHP), Tailwind CSS</span>
-                        <p>A horror movie tracker application. Receives information via The Movie DB API. Currently
-                            in
-                            development.</p>
-                    </div>
-
-                    <img src="screenshots/horrormovietracker.png"
-                        alt="Screenshot of the Horror Movie Tracker app, showing new releases.">
-                </div>
-            </div>
-        </div><!-- /horror movie tracker -->
-
-        <div id="pupdate" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>PUPDate <span class="right"><a href='https://www.youtube.com/watch?v=Wv9V538oRYI'
-                                    target="new" class="button">Demo</a>
-                                <a href='https://github.com/brylucyk/PupDate' target="new" class="button"><i
-                                        class="fab fa-github"></i> Code</a></span></h1>
-                        <span class="tools">Java, XML</span>
-                        <p>A mobile app for scheduling, recording and tracking daily training sessions with your
-                            puppy.
-                            Built in Android Studio. Optimized for API 28: Android 9.0 (Pie)+.</p>
-                    </div>
-
-                    <div class="mobile-screenshots">
-                        <img src="screenshots/pupdate.png" class="lg-mobile"
-                            alt="A screenshot of the landing page of the PUPDate app.">
-                        <img src="screenshots/pupdate2.png" class="lg-mobile"
-                            alt="A screenshot of the 'Settings' page of the PUPDate app.">
-                        <img src="screenshots/pupdate3.png" class="lg-mobile"
-                            alt="A screenshot of the 'Session' page of the PUPDate app, showing how users record a training session.">
-                        <img src="screenshots/pupdate4.png" class="lg-mobile"
-                            alt="A screenshot of the 'Progress' page of the PUPDate app, showing the completed training sessions.">
-                    </div>
-                </div>
-            </div>
-        </div><!-- /pupdate -->
-
-        <div id="birthdaytracker" class="modal">
-            <a href="#" class="close"></a>
-            <div class="row">
-                <div class="col">
-                    <div class="description">
-                        <h1>Birthday Tracker <span class="right"><a
-                                    href='https://github.com/brylucyk/BirthdayTracker' target="new"
-                                    class="button"><i class="fab fa-github"></i> Code</a></span></h1>
-                        <span class="tools">Java, XML</span>
-                        <p>A mobile app that creates a central place where you can keep track of birthdays and gift
-                            ideas, as well as set recurring reminders/notifications for birthday-related tasks
-                            (e.g.,
-                            buy gift, get card ... ). Built in Android Studio. Optimized for API 28: Android 9.0
-                            (Pie)+.
-                        </p>
-                    </div>
-
-                    <div class="mobile-screenshots">
-                        <img src="screenshots/birthdaytracker.png" class="lg-mobile"
-                            alt="A screenshot of the landing page of the BirthdayTracker mobile app, which has a cupcake logo.">
-                        <img src="screenshots/birthdaytracker2.png" class="lg-mobile"
-                            alt="A screenshot of the BirthdayTracker app showing how users can set reminders for birthdays.">
-                        <img src="screenshots/birthdaytracker3.png" class="lg-mobile"
-                            alt="A screenshot of the BirthdayTracker app showing how users can record ideas for birthday gifts.">
-                    </div>
-                </div>
-            </div>
-        </div><!-- /birthday tracker -->
-    <!-- /modals -->
-         
-    <!-- scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/jquery.dlmenu.js"></script>
-    <script src="js/pagetransitions.js"></script>
-    <script src="js/floatingcode.js"></script>
-    <script src="js/gallery.js"></script>
-    <!-- /scripts -->
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bry Lucyk</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/common.css" />
+    <link
+      rel="stylesheet"
+      href="styles/futuristic.css"
+      id="layout-stylesheet"
+    />
+    <!-- preload font awesome -->
+    <script type="text/javascript">
+      (function () {
+        var css = document.createElement("link");
+        css.href =
+          "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css";
+        css.rel = "stylesheet";
+        css.type = "text/css";
+        document.getElementsByTagName("head")[0].appendChild(css);
+      })();
+    </script>
+    <!-- /styles -->
+  </head>
+  <body>
+    <div class="hidden">
+      <div id="minimal-bg"></div>
+
+      <div id="line-w"></div>
+
+      <div id="line-1"></div>
+
+      <div id="line-2"></div>
+
+      <div id="line-3"></div>
+
+      <div id="line-4"></div>
+
+      <div class="page-container flex-row">
+        <div id="landing-grid-bg" class="grid-bg"></div>
+        <content>
+          <div class="title">
+            <h1 class="x-large semi-bold mb-0">Bryanna Lucyk</h1>
+
+            <div class="flex-row subtitle">
+              <div class="mr-1 medium subtitle" id="subtitle-left-arrow"><</div>
+              <div class="subtitle text-center">
+                web + mobile
+                <br />
+                design + development
+              </div>
+
+              <div class="ml-1 medium subtitle" id="subtitle-right-arrow">
+                / >
+              </div>
+            </div>
+          </div>
+          <div class="memphis-animation">
+            <div class="row">
+              <img
+                src="./images/memphis/red-squiggly.png"
+                class="animation-large float-2"
+              />
+              <img
+                src="./images/memphis/red-waves.png"
+                class="animation-large float-3"
+              />
+            </div>
+            <div class="row">
+              <img
+                src="./images/memphis/green-curve.png"
+                class="animation-large float-6"
+              />
+            </div>
+          </div>
+          <div class="balls">
+            <section class="large-ball">
+              <figure class="ball bubble"></figure>
+            </section>
+            <section class="small-ball">
+              <figure class="ball bubble"></figure>
+            </section>
+            <section class="medium-ball">
+              <figure class="ball bubble"></figure>
+            </section>
+          </div>
+        </content>
+        <nav>
+          <a href="./index.html"
+            ><div class="small-logo">
+              <img src="./images/logo_white.png" class="w-100" /></div
+          ></a>
+          <div>
+            <div class="section">
+              <span class="nav-heading"
+                ><a href="projects.html">Projects</a></span
+              >
+            </div>
+            <div class="section">
+              <span class="nav-heading"><a href="about.html">About</a></span>
+            </div>
+            <div class="section">
+              <span class="nav-heading"><a href="foryou.html">For You</a></span>
+            </div>
+            <div class="section">
+              <span class="nav-heading"
+                ><a href="contact.html">Contact</a></span
+              >
+            </div>
+          </div>
+
+          <div class="section">
+            <a href="mailto:hi@brylucyk.com"
+              ><i class="fa-solid fa-paper-plane"></i
+            ></a>
+            <a href="https://github.com/brylucyk"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://ca.linkedin.com/in/bryanna-lucyk"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="https://codepen.io/b-r-y"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+          </div>
+
+          <div class="section">
+            <span class="nav-heading"
+              ><a onclick="changeTheme()" class="small"
+                ><i class="fa-solid fa-repeat"></i> Theme</a
+              ></span
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
+  <!-- js -->
+  <script
+    src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/common.js"></script>
+  <script src="js/ome.js"></script>
+  <!-- /js -->
 </html>

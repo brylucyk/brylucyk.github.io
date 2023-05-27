@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bry Lucyk</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/default.css" id="layout-stylesheet" />
+    <!-- /styles -->
+
+    <!-- js -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.2.min.js"
+      integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+    <!-- /js -->
+  </head>
+  <body>
+    <div class="hidden">
+      <div class="logo flex-row ml-2">
+        <div class="top-logo"></div>
+        <div class="logo-desc flex-col">
+          <span>Bryanna Lucyk</span>
+          <span>web + mobile</span>
+          <span>design / development</span>
+        </div>
+      </div>
+      <div class="container flex-col flex-center">
+        <div class="grid-bg w-100">
+          <div class="margin-bottom-2 text-center">
+            <h1>Choose your vibe:</h1>
+          </div>
+
+          <div class="layout-choices flex flex-row flex-center w-100">
+            <div
+              class="layout-choice layout-choice--futuristic"
+              onclick="selectStyleSheet('futuristic')"
+              onmouseenter="swapStyleSheet('futuristic')"
+              onmouseleave="swapStyleSheet('default')"
+            >
+              <div class="layout-choice--futuristic-grid">
+                <div class="inner-style-name">futuristic</div>
+              </div>
+            </div>
+
+            <div
+              class="layout-choice layout-choice--minimal"
+              onclick="selectStyleSheet('minimal')"
+              onmouseenter="swapStyleSheet('minimal')"
+              onmouseleave="swapStyleSheet('default')"
+            >
+              <div class="inner-style-name">minimal</div>
+            </div>
+
+            <div
+              class="layout-choice layout-choice--memphis"
+              onclick="selectStyleSheet('memphis')"
+              onmouseenter="swapStyleSheet('memphis')"
+              onmouseleave="swapStyleSheet('default')"
+            >
+              <div class="inner-style-name">so 90's</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

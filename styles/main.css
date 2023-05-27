@@ -1,0 +1,172 @@
+@import url("./Axiforma.css");
+@import url("./Inter.css");
+
+body {
+  font-family: "Axiforma";
+  margin: 0;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  color: #333;
+}
+
+.container {
+  background-color: #fafafa;
+  background-size: 100%;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1.5em;
+}
+
+h1,
+.logo,
+.top-logo,
+.logo-desc {
+  transition: all 0.8s ease-in;
+  -webkit-transition: all 0.8s ease-in;
+  -moz-transition: all 0.8s ease-in;
+  -ms-transition: all 0.8s ease-in;
+  -o-transition: all 0.8s ease-in;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top-logo {
+  width: 2.5em;
+  height: 2.5em;
+  margin: 4em 1em 1em 2em;
+  background-image: url("../images/logo_black.png");
+  background-size: contain;
+}
+
+.logo-desc {
+  font-family: "Inter";
+  padding: 1em;
+  border-left: 5px solid black;
+  margin-top: 3em;
+}
+
+.logo-desc span:nth-child(1) {
+  font-weight: 600;
+  font-size: 900;
+  font-size: 0.7em;
+  margin-bottom: 0.5em;
+}
+.logo-desc span:nth-child(2) {
+  font-size: 0.6em;
+  margin-bottom: 0.5em;
+}
+.logo-desc span:nth-child(3) {
+  font-size: 0.6em;
+}
+
+.layout-choices {
+  height: 200px;
+}
+
+.layout-choice {
+  width: 80px;
+  height: 100%;
+  transition: width 1s ease-in-out, height 1s ease-in-out,
+    font-size 1s ease-in-out, border-radius 1s ease-in-out,
+    clip-path 1s ease-in-out, border 0s;
+  -webkit-transition: width 1s ease-in-out, height 1s ease-in-out,
+    font-size 1s ease-in-out, border-radius 1s ease-in-out,
+    clip-path 1s ease-in-out, border 0s;
+  -moz-transition: width 1s ease-in-out, height 1s ease-in-out,
+    font-size 1s ease-in-out, border-radius 1s ease-in-out,
+    clip-path 1s ease-in-out, border 0s;
+  -ms-transition: width 1s ease-in-out, height 1s ease-in-out,
+    font-size 1s ease-in-out, border-radius 1s ease-in-out,
+    clip-path 1s ease-in-out, border 0s;
+  -o-transition: width 1s ease-in-out, height 1s ease-in-out,
+    font-size 1s ease-in-out, border-radius 1s ease-in-out,
+    clip-path 1s ease-in-out, border 0s;
+  font-size: 0em;
+  color: white;
+  padding: 1em;
+  margin: 1em;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0%, 100% 51%, 50% 100%, 0% 50%);
+}
+
+.layout-choice:hover {
+  width: 150px;
+  font-size: 1.5em;
+  opacity: 1;
+  clip-path: none;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 10px solid white;
+}
+
+.inner-style-name {
+  visibility: hidden;
+}
+
+.layout-choice:hover .inner-style-name {
+  visibility: visible;
+}
+
+.layout-choice--futuristic {
+  background-image: url("../images/bubblerecording_small.gif");
+  background-size: cover;
+  font-family: "Inter";
+}
+
+.layout-choice--futuristic-grid {
+  background-image: url("../backgrounds/grid.svg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.layout-choice--memphis,
+.layout-choice--futuristic-grid,
+.layout-choice--minimal {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+}
+
+.layout-choice--memphis {
+  background-image: url("../images/memphisrecording_small.gif");
+  background-size: cover;
+  background-position: top left;
+  color: rgba(65, 35, 95, 0.8);
+  font-weight: 800;
+}
+
+.layout-choice--minimal {
+  background-color: #e5e5e5;
+  background-image: url("../images/minimalrecording_small.gif");
+  background-size: cover;
+  background-position: center center;
+  color: #000;
+  font-family: "Public Sans";
+  text-transform: uppercase;
+}
