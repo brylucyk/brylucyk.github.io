@@ -1,31 +1,3 @@
-const projects = {
-    "cho": {
-        "web": 2,
-        "mobile": 0
-    },
-    "h2i": {
-        "web": 2,
-        "mobile": 1
-    },
-    "kitchen_store": {
-        "web": 0,
-        "mobile": 4
-    },
-    "retrowave_name_generator": {
-        "web": 1,
-        "mobile": 1
-    },
-    "smarter_goals": {
-        "web": 1,
-        "mobile": 0
-    },
-    "telepromy": {
-        "web": 1,
-        "mobile": 0
-    }
-};
-
-
 // Gallery image hover
 $(".img-wrapper").hover(
     function () {
@@ -37,7 +9,7 @@ $(".img-wrapper").hover(
 
 // Lightbox
 const $overlay = $('<div id="overlay"></div>');
-const $main = $('<div id="main"></div>');
+const $image = $("<img>");
 const $prevButton = $('<div id="prevButton"><i class="fa fa-chevron-left"></i></div>');
 const $nextButton = $('<div id="nextButton"><i class="fa fa-chevron-right"></i></div>');
 const $exitButton = $('<div id="exitButton"><i class="fa-solid fa-circle-xmark"></i></div>');
@@ -45,45 +17,26 @@ let $thumbnailSrc = "";
 let $parentGallery = "";
 
 // Add overlay
-$overlay.append($main).prepend($prevButton).append($nextButton).append($exitButton);
-
+$overlay.append($image).prepend($prevButton).append($nextButton).append($exitButton);
+$("#page").append($overlay);
 
 $overlay.hide();
 
 $(".img-overlay").click(function (event) {
     event.preventDefault();
     $parentGallery = $(this).parent().parent().parent().parent().attr("id");
-
     let imageLocation = $(this).prev().attr("href");
     $thumbnailSrc = $(this).prev().find("img").attr("src");
-
-    $main.empty();
-
-    const urlParts = imageLocation.split("_recording");
-    const project = urlParts[0].split("./images/screenshots/");
-
-    for (let i = 0; i < projects[project[1]]["web"]; i++) {
-        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_web_${i + 1}.gif" class="web-screenshot">`);
-        $main.append($image);
-    }
-
-    for (let i = 0; i < projects[project[1]]["mobile"]; i++) {
-        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_mobile_${i + 1}.gif" class="mobile-screenshot">`);
-        $main.append($image);
-    }
-
-
-    $("#page").append($overlay);
-
-
+    // let imageL = $(this).prev().attr("data-id");
+    $image.attr("src", imageLocation);
     $overlay.fadeIn("slow");
 });
 
-// // When the overlay is clicked
-// $overlay.click(function () {
-//     // Fade out the overlay
-//     $(this).fadeOut("slow");
-// });
+// When the overlay is clicked
+$overlay.click(function () {
+    // Fade out the overlay
+    $(this).fadeOut("slow");
+});
 
 // When next button is clicked
 $nextButton.click(function (event) {
