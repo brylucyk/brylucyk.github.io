@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Public+Sans:wght@300;400;600&display=swap");
+
+/* remove features from other layouts */
+.memphis-animation {
+  display: none;
+}
+
+.balls {
+  display: none;
+}
+
+/* scrollbars */
+*,
+body {
+  scrollbar-color: #000 transparent;
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* backgrounds */
+body {
+  background: #e5e5e5;
+}
+
+#minimal-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url("../backgrounds/chroma03.png");
+  background-size: contain;
+  background-position: center;
+  transition: all 2s ease;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  -o-transition: all 2s ease;
+}
+
+/* containers */
+
+.container,
+.page-container {
+  font-family: "Public Sans";
+  text-transform: uppercase;
+}
+
+.container {
+  background-image: url("../backgrounds/chroma01.png");
+  background-size: 100%;
+  background-position: left center;
+}
+
+.background-1 {
+  background-image: url("../backgrounds/chroma01.png") !important;
+}
+
+.background-2 {
+  background-image: url("../backgrounds/chroma02.png") !important;
+}
+
+.background-3 {
+  background-image: url("../backgrounds/chroma03.png") !important;
+}
+
+/* font overrides */
+
+h1 {
+  margin-top: 0;
+}
+
+h1,
+.x-large {
+  font-family: "Playfair Display";
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+.inner-style-name {
+  font-size: 0.7em;
+}
+
+/* links */
+
+a {
+  color: #000;
+  font-weight: 600;
+}
+
+a:hover {
+  color: blue;
+  text-shadow: white 0px 0px 20px;
+}
+
+/* nav */
+
+nav a,
+#contact-links a {
+  color: #000;
+}
+
+nav a:hover,
+#contact-links a:hover {
+  color: blue;
+}
+
+.small-logo {
+  background-color: #000;
+}
+
+/* slider overrides */
+
+.slider-nav a {
+  background: transparent;
+  box-shadow: none;
+  text-decoration: none;
+}
+.slider-nav a.active {
+  background: transparent;
+  color: #666;
+}
+
+.flex-item {
+  color: black;
+}
+
+.normal {
+  color: black;
+  text-transform: none;
+}
+
+/* index */
+
+.title {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.title h1 {
+  margin-bottom: 1em;
+}
+
+/* home page */
+#line-1 {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  border-left: 3px solid black;
+}
+
+#line-2 {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  border-left: 5px solid black;
+}
+
+#line-3 {
+  position: absolute;
+  top: 0;
+  left: 13%;
+  border-left: 5px solid black;
+}
+
+#line-4 {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  border-left: 3px solid black;
+}
+
+#line-1,
+#line-2,
+#line-3,
+#line-4 {
+  transition: height 8s ease, opacity 8s ease;
+  -webkit-transition: height 8s ease, opacity 8s ease;
+  -moz-transition: height 8s ease, opacity 8s ease;
+  -ms-transition: height 8s ease, opacity 8s ease;
+  -o-transition: height 8s ease, opacity 8s ease;
+}
+
+#line-2,
+#line-3 {
+  height: 80%;
+  animation: line-grow-shrink-h-80 8s ease-in-out;
+}
+
+#line-1,
+#line-4 {
+  height: 70%;
+  animation: line-grow-shrink-h-70 8s ease-in-out;
+}
+
+#line-w {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 70%;
+  border: 5px solid black;
+  animation: line-grow-shrink-w 8s ease-in-out;
+  transition: width 8s ease, opacity 8s ease;
+  -webkit-transition: width 8s ease, opacity 8s ease;
+  -moz-transition: width 8s ease, opacity 8s ease;
+  -ms-transition: width 8s ease, opacity 8s ease;
+  -o-transition: width 8s ease, opacity 8s ease;
+}
+
+@keyframes line-grow-shrink-w {
+  from {
+    width: 0px;
+    opacity: 0;
+  }
+  to {
+    width: 70%;
+    opacity: 1;
+  }
+}
+
+@keyframes line-grow-shrink-h-70 {
+  from {
+    height: 0px;
+    opacity: 0;
+  }
+  to {
+    height: 70%;
+    opacity: 1;
+  }
+}
+
+@keyframes line-grow-shrink-h-80 {
+  from {
+    height: 0px;
+    opacity: 0;
+  }
+  to {
+    height: 80%;
+    opacity: 1;
+  }
+}
+
+/* contact page */
+
+.fa-canadian-maple-leaf {
+  animation: red-glow 10s ease infinite;
+  margin-left: 1rem;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+}
+
+@keyframes red-glow {
+  0% {
+    color: #000;
+  }
+  50% {
+    color: #fa2d4f;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+/* for you */
+#license {
+  font-family: "Public Sans", sans-serif;
+}

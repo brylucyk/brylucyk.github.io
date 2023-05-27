@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta property="og:site_name" content="Bryanna Lucyk - portfolio">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#205072">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="p_style.css" id="pagestyle" rel="stylesheet" media="screen">
+    <link rel="preload" href="p_style_hc.css" as="style">
+    <script type="module">
+      let highContrast = localStorage["highContrast"];
+      if(localStorage["highContrast"] === "true") {
+        document.getElementById("pagestyle").setAttribute("href", "p_style_hc.css");
+      }
+      else {
+        document.getElementById("pagestyle").setAttribute("href", "p_style.css");
+      }
+    </script>
+    <script src="portfolio.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <title>bryanna lucyk - web portfolio</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body onload="startup()">
+    <div id="screen-frame"></div>
+    <div id="screen-overlay"></div>
+
+    <div id="screen-container">
+      <div id="toolbar-container">
+        <div id="tab-bar">
+          <div class="non-active-tab"><a href="http://brylucyk.com">main</a></div>
+          <div id="active-tab"><a href="about.html">about</a></div>
+          <div class="non-active-tab"><a href="portfolio.html">portfolio</a></div>
+          <div class="non-active-tab"><a href="contact.html">contact</a></div>
+        </div>
+          <div id="top-toolbar">
+            <div id="browser-buttons">
+              <a href="javascript:history.back()" title="back in browser history" tabindex=0><i class="material-icons">arrow_back</i></a>
+              <a href="javascript:window.location.reload();" title="refresh" tabindex=0><i class="material-icons">refresh</i></a>
+              <a href="http://brylucyk.com" title="landing page" tabindex=0><i class="material-icons">home</i></a>
+              <a title="change brightness/contrast" onclick="alterContrast()" tabindex=0><i class="material-icons">brightness_6</i></a>
+              <div id="address-bar">.../about.html</div>
+          </div>
+        </div>
+      </div>
+
+      <content class="scroll">
+        <div id="sleepDisplay"><i class="material-icons">nights_stay</i></div>
+        <div id="inner">
+          <h1>Hello!</h1>
+          <img src="me-and-fen-circle-cropped.png" alt="Pic of me and my puppy!" class="about-pic">
+          <p>My name is Bryanna Lucyk, and this is my coding portfolio! It's also a <a href="http://brylucyk.com/side1/">warehouse</a> for my experiments and practice projects. </p>
+          
+          <p>I'm a <a href="https://www.fanshawec.ca/programs/cpa3-computer-programming-and-analysis/next">Computer Programming student</a> with a background in <a href="https://www.kings.uwo.ca/">Psychology, Thanatology and English</a>. 
+          I'm a Software Developer with the <a href="https://www.lawsonresearch.ca/lawsonlink-2019/prime-team">R2P Program at Parkwood Institute</a>, helping to create a clinical and research platform for spinal cord and brain injury rehabilitation.</p>
+
+          <p style="clear: both;">
+            <strong>Languages: </strong> HTML, CSS, Javascript, Java, C, C++, C#, PHP, SQL, COBOL
+          </p>
+          <p>
+            <strong>Frameworks/Libraries:</strong> JQuery, Laravel/Livewire, Bootstrap, Tailwind CSS, SASS, React.JS
+          </p>
+          <p>
+            <strong>IDEs/Software:</strong> Visual Studio, Visual Studio Code, Atom, Eclipse, MySQL, Oracle, Android Studio, Photoshop, IBM Developer for z/OS
+          </p>
+          
+          <p style="margin-top: 20px"><h3>Other stuff:</h3>
+            <ul>
+              <li>Pronouns: she/her.</li>
+              <li>My <a href="http://instagram.com/mouseober" target="new">sister</a> is awesome. We're twins. Nope, not identical.</li>
+              <li>I have two little bourkes named <span class="cuties">Rowe</span> and <span class="cuties">Swayze</span>, and a mini Eskie named <span class="forrest-fen">Fen</span>.</li>
+            </ul>
+          </p>
+
+          <p>&nbsp;</p>
+        </div>
+      </content>
+
+      <div id="bottom-toolbar">
+        <div id="icon"><a onclick="sleep()" tabindex=0><i class="material-icons">panorama_fish_eye</i></a></div>
+        <div id="fake-search" onmouseover="lighter()" onmouseout="darker()">Search here</div>
+
+        <div id="fake-search-expand">
+          <ul>
+            <a href="portfolio.html#web-layouts"><li>Web Layouts</li></a>
+            <a href="portfolio.html#js-forms"><li>Javascript Forms</li></a>
+            <a href="portfolio.html#mobile-apps"><li>Mobile Apps</li></a>
+          </ul>
+        </div>
+        <div id="time"></div>
+      </div>
+    </div>
+  </body>
+</html>

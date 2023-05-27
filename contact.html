@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bry Lucyk</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/common.css" />
+    <link
+      rel="stylesheet"
+      href="styles/futuristic.css"
+      id="layout-stylesheet"
+    />
+    <!-- preload font awesome -->
+    <script type="text/javascript">
+      (function () {
+        var css = document.createElement("link");
+        css.href =
+          "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css";
+        css.rel = "stylesheet";
+        css.type = "text/css";
+        document.getElementsByTagName("head")[0].appendChild(css);
+      })();
+    </script>
+    <!-- /styles -->
+  </head>
+  <body>
+    <div class="hidden">
+      <div id="minimal-bg"></div>
+      <div class="page-container flex-row">
+        <div class="balls w-100 flex-col flex-center">
+            <section class="medium-ball-2">
+              <figure class="ball bubble"></figure>
+            </section>
+            <div class="flex-row">
+                <section class="small-ball-2">
+                    <figure class="ball bubble"></figure>
+                </section>
+                <section class="medium-ball">
+                    <figure class="ball bubble"></figure>
+                </section>
+            </div>
+            <div class="flex-row w-100">
+                <section class="small-ball">
+                <figure class="ball bubble"></figure>
+                </section>
+                <section class="large-ball-2">
+                    <figure class="ball bubble"></figure>
+                </section>
+            </div>
+          </div>
+
+          <div class="memphis-animation">
+            <div class="row">
+              <img
+                src="./images/memphis/emoji-1.svg"
+                class="animation-small float-1"
+              />
+              <img
+                src="./images/memphis/red-squiggly.png"
+                class="animation-small float-2"
+              />
+              <img
+                src="./images/memphis/red-waves.png"
+                class="animation-small float-3"
+              />
+              <img
+                src="./images/memphis/emoji-2.svg"
+                class="animation-medium float-4"
+              />
+            </div>
+            <div class="row">
+             
+              <img
+                src="./images/memphis/green-curve.png"
+                class="animation-large float-6"
+              />
+            </div>
+          </div>
+          
+        <content class="grid-bg flex-col flex-center contact" style="margin-left: -50px">
+            <h1>get in touch </h1>
+            <div id="contact-links">
+              <a href="mailto:hi@brylucyk.com"><i class="fa-solid fa-paper-plane"></i></a>
+              <a href="https://github.com/brylucyk"><i class="fa-brands fa-github"></i></a>
+              <a href="https://ca.linkedin.com/in/bryanna-lucyk"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://codepen.io/b-r-y"
+                ><i class="fa-brands fa-codepen"></i
+              ></a>
+            </div>
+            <div class="mt-0 normal">
+              Based in Canada <i class="fa-brands fa-canadian-maple-leaf"></i>
+            </div>
+        </content>
+        <nav>
+          <a href="./index.html"
+            ><div class="small-logo">
+              <img src="./images/logo_white.png" class="w-100" /></div
+          ></a>
+          <div>
+            <div class="section">
+              <span class="nav-heading"
+                ><a href="projects.html">Projects</a></span
+              >
+            </div>
+            <div class="section">
+              <span class="nav-heading"><a href="about.html">About</a></span>
+            </div>
+            <div class="section">
+              <span class="nav-heading"><a href="foryou.html">For You</a></span>
+            </div>
+            <div class="section">
+              <span class="nav-heading"
+                ><a href="contact.html">Contact</a></span
+              >
+            </div>
+          </div>
+
+          <div class="section">
+            <a href="mailto:hi@brylucyk.com"
+              ><i class="fa-solid fa-paper-plane"></i
+            ></a>
+            <a href="https://github.com/brylucyk"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://ca.linkedin.com/in/bryanna-lucyk"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="https://codepen.io/b-r-y"
+              ><i class="fa-brands fa-codepen"></i
+            ></a>
+          </div>
+
+          <div class="section">
+            <span class="nav-heading"
+              ><a onclick="changeTheme()" class="small"
+                ><i class="fa-solid fa-repeat"></i> Theme</a
+              ></span
+            >
+          </div>
+        </nav>
+    </div>
+  </body>
+  <!-- js -->
+  <script
+    src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/common.js"></script>
+  <script src="js/about.js"></script>
+  <!-- /js -->
+</html>

@@ -1,0 +1,99 @@
+/* --- SIDE 1: HIGH CONTRAST STYLESHEET --- */
+
+body {
+  font-size: 1.5em;
+  font-family: 'Reenie Beanie', cursive;
+  color: #333;
+  background-image: linear-gradient(to right, /* light to dark */
+    #FFF, #FFF, #FFF, #FFF, #FFF, #FFF, #FFF, #FFF, #FFF, #FFF,  #FFF,  #FFF, #EEE, #EEE, #EEE, #DDD, #CCC, #BBB, #444, #333, #222, #111, #000);
+  background-size: cover;
+  height: 100%;
+  max-height: 100vh;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+h1 {
+  width: 8em;
+  display: block;
+  text-shadow: 2px 2px 20px #FFF;
+  text-align: center;
+}
+
+h1:before {
+    content: ' ';
+    display: block;
+    border-top: 10px solid #A8216B;
+    position: relative;
+    top: .3em;
+    opacity: 90%;
+}
+
+img {
+  border: 10px solid black;
+  width: 100%;
+}
+
+/* --- divs --- */
+
+#container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- arrows --- */
+
+#back {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  font-size: 3em;
+  z-index: 3;
+}
+
+#portfolio {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  font-size: 3em;
+  z-index: 3;
+}
+
+#back a {
+  color: #333;
+  text-shadow: 1px 1px 10px #FFF;
+  text-decoration: none;
+}
+
+#portfolio a {
+  color: #fff;
+  text-shadow: 1px 1px 10px #FFF;
+  text-decoration: none;
+}
+
+#back a:hover, #portfolio a:hover {
+  color: #A8216B;
+  text-shadow: 2px 2px 20px #ccc;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+ #container {
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+}
