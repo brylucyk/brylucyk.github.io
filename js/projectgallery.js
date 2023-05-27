@@ -4,42 +4,88 @@ const projects = {
         "description": "Website created for Lawson Health Research Institute for the Community Homes for Opportunity project. Built minimally to accommodate web host restrictions.",
         "architecture": "HTML, CSS, JavaScript",
         "web": 2,
-        "mobile": 0
+        "mobile": 0,
+        "ext": ".gif"
     },
     "h2i": {
         "title": "Health, Housing and Income",
         "description": "Website created for Lawson Health Research Institute for the Community Homes for Opportunity project. Built minimally to accommodate web host restrictions.",
         "architecture": "HTML, CSS, JavaScript",
         "web": 2,
-        "mobile": 1
+        "mobile": 1,
+        "ext": ".gif"
     },
     "kitchen_store": {
         "title": "The Kitchen Store",
         "description": "A mobile-first, responsive, e-commerce application.",
         "architecture": "ASP.NET Core with C#.NET, Vue.JS, PrimeVue, Azure SQL Server",
         "web": 0,
-        "mobile": 4
+        "mobile": 4,
+        "ext": ".gif"
     },
     "retrowave_name_generator": {
         "title": "Retrowave Name Generator",
         "description": "Experimenting with gradients and css animations.",
         "architecture": "HTML, CSS, JavaScript",
         "web": 1,
-        "mobile": 1
+        "mobile": 1,
+        "ext": ".gif"
     },
     "smarter_goals": {
         "title": "Smarter Goals",
         "description": "A goal-tracking app.",
         "architecture": "Angular Apollo & GraphQL, TypeScript, SCSS",
         "web": 3,
-        "mobile": 0
+        "mobile": 0,
+        "ext": ".gif"
     },
     "telepromy": {
         "title": "TELEPROM-Y",
         "description": "Website created for Lawson Health Research Institute as part of the knowledge translation program for the TELEPROM-Y project. Built minimally to accommodate web host restrictions.",
         "architecture": "HTML, CSS",
         "web": 1,
-        "mobile": 0
+        "mobile": 0,
+        "ext": ".gif"
+    },
+    "uachieve": {
+        "title": "uAchieve",
+        "description": "The uAchieve app is an intuitive way to make goal setting and completion both easy and fun. This cross-platform app uses gamification and social networking to motivate and reward users for reaching their short-term and long-term goals. This was built with a group of 5 other people over the course of 5 two-week sprints.",
+        "architecture": "Mongo DB (Mongoose), Express, React, Node.js, Tailwind CSS",
+        "web": 7,
+        "mobile": 0,
+        "ext": ".gif"
+    },
+    "pandemic_simulator": {
+        "title": "Pandemic Simulator",
+        "description": "A Java program that visualizes the spread of a disease in a given population over a three-week period. A final group project completed for INFO 3136: Mobile Development/Advanced Java. I was responsible for the UI layout, components and general styling; my team-mates added the functionality for input, simulation, and reporting components.",
+        "architecture": "Java, JavaFX",
+        "web": 2,
+        "mobile": 0,
+        "ext": ".png"
+    },
+    "pupdate": {
+        "title": "Pupdate",
+        "description": "A mobile app for scheduling, recording and tracking daily training sessions with your puppy.",
+        "architecture": "Java, XML, Android Studio, Optimized for API 28: Android 9.0 (Pie)+.",
+        "web": 0,
+        "mobile": 4,
+        "ext": ".png"
+    },
+    "birthday_tracker": {
+        "title": "Birthday Tracker",
+        "description": "A mobile app that creates a central place where you can keep track of birthdays and gift ideas, as well as set recurring reminders/notifications for birthday-related tasks (e.g., buy gift, get card ... )",
+        "architecture": "Java, XML, Android Studio, Optimized for API 28: Android 9.0 (Pie)+",
+        "web": 0,
+        "mobile": 3,
+        "ext": ".png"
+    },
+    "daily_intention": {
+        "title": "Daily Intention",
+        "description": "A habit tracking app where users can set a “daily intention”, mark whether this daily intention was kept, and view statistics related to how often they keep their daily intentions.        ",
+        "architecture": "React Native (Expo), Redux, Firebase Realtime Database",
+        "web": 0,
+        "mobile": 9,
+        "ext": ".png"
     }
 };
 
@@ -96,14 +142,18 @@ function populateOverlay(imageLocation) {
     $main.append($blurb);
 
     for (let i = 0; i < projects[project[1]]["web"]; i++) {
-        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_web_${i + 1}.gif" class="web-screenshot">`);
+        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_web_${i + 1}${projects[project[1]]["ext"]}" class="web-screenshot">`);
         $main.append($image);
     }
 
+    const $mobileContainer = $('<div id="mobile-container"></div>');
+
     for (let i = 0; i < projects[project[1]]["mobile"]; i++) {
-        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_mobile_${i + 1}.gif" class="mobile-screenshot">`);
-        $main.append($image);
+        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_mobile_${i + 1}${projects[project[1]]["ext"]}" class="mobile-screenshot">`);
+        $mobileContainer.append($image);
     }
+
+    $main.append($mobileContainer);
 }
 
 // When next button is clicked
