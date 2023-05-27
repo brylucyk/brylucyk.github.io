@@ -65,17 +65,26 @@ let $parentGallery = "";
 // Add overlay
 $overlay.append($main).prepend($prevButton).append($nextButton).append($exitButton);
 
-
 $overlay.hide();
 
 $(".img-overlay").click(function (event) {
     event.preventDefault();
     $parentGallery = $(this).parent().parent().parent().parent().attr("id");
 
-    let imageLocation = $(this).prev().attr("href");
-    $thumbnailSrc = $(this).prev().find("img").attr("src");
+    const imageLocation = $(this).prev().attr("href");
+    populateOverlay(imageLocation);
+    $("#page").append($overlay);
 
-    $main.empty();
+    $overlay.fadeIn("slow");
+});
+
+/**
+ * Fills the overlay with the current project.
+ * @param {string} imageLocation The src of the first image displayed in the overlay.
+ */
+function populateOverlay(imageLocation) {
+    $thumbnailSrc = imageLocation;
+    $main.empty().fadeIn(800);
 
     const urlParts = imageLocation.split("_recording");
     const project = urlParts[0].split("./images/screenshots/");
@@ -95,13 +104,7 @@ $(".img-overlay").click(function (event) {
         const $image = $(`<img src="./images/screenshots/${project[1]}_recording_mobile_${i + 1}.gif" class="mobile-screenshot">`);
         $main.append($image);
     }
-
-
-    $("#page").append($overlay);
-
-
-    $overlay.fadeIn("slow");
-});
+}
 
 // When next button is clicked
 $nextButton.click(function (event) {
@@ -109,24 +112,18 @@ $nextButton.click(function (event) {
     $("#overlay img").hide();
 
     // Image with matching location of the overlay image
-    let $currentImg = $('#' + $parentGallery + ' img[src="' + $thumbnailSrc + '"]');
-
-    // Finds the next image
-    let $nextImg = $($currentImg.closest(".img-col").next(".img-col").find("a"));
-
+    const $currentImg = $('#' + $parentGallery + ' img[src="' + $thumbnailSrc + '"]');
+    const $nextImg = $($currentImg.closest(".img-col").next(".img-col").find("a"));
     // All of the images in the gallery
-    let $images = $("#" + $parentGallery + " img");
+    const $images = $("#" + $parentGallery + " img");
 
     // If there is a next image
     if ($nextImg.length > 0) {
-        // Fade in the next image
-        $("#overlay img").attr("src", $nextImg.attr("href")).fadeIn(800);
-        $thumbnailSrc = $nextImg.find('img').attr("src");
+        const imageLocation = $nextImg.find('img').attr("src");
+        populateOverlay(imageLocation);
     } else {
-        // Otherwise fade in the first image
-        const $firstImage = $('#' + $parentGallery).find("a").first();
-        $("#overlay img").attr("src", $firstImage.attr("href")).fadeIn(800);
-        $thumbnailSrc = $($images[0]).attr("src");
+        const imageLocation = $($images[0]).attr("src");
+        populateOverlay(imageLocation);
     }
     // Prevents overlay from being hidden
     event.stopPropagation();
@@ -137,26 +134,21 @@ $prevButton.click(function (event) {
     // Hide the current image
     $("#overlay img").hide();
 
-    let $currentImg = $('#' + $parentGallery + ' img[src="' + $thumbnailSrc + '"]');
-
-    // Finds the prev image
-    let $prevImg = $($currentImg.closest(".img-col").prev(".img-col").find("a"));
-
+    // Image with matching location of the overlay image
+    const $currentImg = $('#' + $parentGallery + ' img[src="' + $thumbnailSrc + '"]');
+    const $prevImg = $($currentImg.closest(".img-col").prev(".img-col").find("a"));
     // All of the images in the gallery
-    let $images = $("#" + $parentGallery + " img");
+    const $images = $("#" + $parentGallery + " img");
 
     // If there is a prev image
     if ($prevImg.length > 0) {
-        // Fade in the prev image
-        $("#overlay img").attr("src", $prevImg.attr("href")).fadeIn(800);
-        $thumbnailSrc = $prevImg.find('img').attr("src");
+        const imageLocation = $prevImg.find('img').attr("src");
+        populateOverlay(imageLocation);
 
     } else {
         // Otherwise fade in the last image
-        const $lastImage = $('#' + $parentGallery).find("a").last();
-        $("#overlay img").attr("src", $lastImage.attr("href")).fadeIn(800);
-        $thumbnailSrc = $($images[$images.length - 1]).attr("src");
-
+        const imageLocation = $($images[$images.length - 1]).attr("src");
+        populateOverlay(imageLocation);
     }
     event.stopPropagation();
 });
