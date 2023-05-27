@@ -1,9 +1,3 @@
-/**
- * description
- * i don't think i need links
- * need multiple images
- */
-
 // Gallery image hover
 $(".img-wrapper").hover(
     function () {
