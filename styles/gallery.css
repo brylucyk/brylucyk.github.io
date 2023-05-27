@@ -90,14 +90,6 @@
   overflow-y: scroll;
 }
 
-#mobile-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: col;
-  flex-wrap: wrap;
-}
-
 #overlay img {
   margin: 0;
   height: 80%;
@@ -120,8 +112,8 @@
 }
 
 .mobile-screenshot {
-  width: 225px;
-  margin: 2% !important;
+  height: auto;
+  margin: 2% 30% !important;
 }
 
 #nextButton,
