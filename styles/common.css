@@ -487,3 +487,30 @@ a:hover {
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .nav-heading i {
+    display: none;
+  }
+
+  nav {
+    background-color: white;
+    margin: 0;
+    height: auto;
+    position: fixed;
+    top: 0;
+    padding: 1em 0 0 0;
+  }
+
+  nav a {
+    transition: none;
+  }
+
+  nav a:hover {
+    font-size: 0.8em;
+  }
+
+  .small-logo {
+    margin: 0;
+  }
+}

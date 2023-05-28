@@ -287,3 +287,15 @@ nav a:hover,
     background-position: center;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .slider-nav a {
+    color: blue;
+    background-color: #fff;
+  }
+
+  .slider-nav a.active {
+    background: black;
+    color: white;
+  }
+}
