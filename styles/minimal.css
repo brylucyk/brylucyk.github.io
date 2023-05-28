@@ -298,4 +298,13 @@ nav a:hover,
     background: black;
     color: white;
   }
+
+  .x-large {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    margin-top: 1em;
+    font-size: 0.9em;
+  }
 }

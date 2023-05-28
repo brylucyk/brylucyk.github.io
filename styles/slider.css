@@ -164,7 +164,7 @@
   .slider-nav {
     height: auto;
     position: fixed;
-    top: 45px;
+    top: 42px;
     width: 100%;
     display: flex;
     flex-direction: row;

@@ -427,16 +427,33 @@ a:hover {
   nav {
     position: absolute;
     top: 0;
-    height: 100px;
+    height: auto;
     flex-direction: row;
     width: 100%;
-    margin: 1em;
     padding: 0;
+    align-items: start;
     justify-content: space-around;
     -webkit-justify-content: space-around;
     -moz-justify-content: space-around;
     -ms-justify-content: space-around;
     -o-justify-content: space-around;
+  }
+
+  #license {
+    width: 90%;
+    height: 90%;
+    overflow: scroll;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    transform: none;
+    padding: 5%;
+    border-radius: 0;
+  }
+
+  #license #exit-button {
+    top: 2.5%;
+    right: 2.5%;
   }
 
   nav a {
@@ -463,7 +480,7 @@ a:hover {
   .small-logo {
     width: 2em;
     height: 2em;
-    margin-left: 0.5em;
+    margin: 0 0 0 0.5em;
   }
 
   .nav-heading i {
@@ -489,8 +506,12 @@ a:hover {
 }
 
 @media only screen and (max-width: 500px) {
-  .nav-heading i {
+  #theme {
     display: none;
+  }
+
+  .nav-heading a i {
+    font-size: 0.9em;
   }
 
   nav {
@@ -512,5 +533,19 @@ a:hover {
 
   .small-logo {
     margin: 0;
+  }
+
+  .contact {
+    width: 100vw;
+    padding: 1em;
+    margin: 0;
+    height: 100vh;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+  }
+
+  #contact-links {
+    width: 100vw !important;
   }
 }

@@ -431,3 +431,18 @@ a:hover {
     transform: translate3d(0px, 0px, 0px);
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .container,
+  .page-container {
+    background-size: 500% !important;
+    background-position: center center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  nav {
+    background-image: url("../backgrounds/futuristic.png");
+    background-position: center center;
+  }
+}
