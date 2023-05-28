@@ -4,9 +4,9 @@ $(document).ready(function () {
     const theme = getCookie("BLTheme");
     $("#layout-stylesheet").attr("href", `styles/${theme}.css`);
 
-    if (theme === "minimal") {
-        fadeBetweenBackgrounds();
-    }
+    // if (theme === "minimal") {
+    //     fadeBetweenBackgrounds();
+    // }
 });
 
 /**
