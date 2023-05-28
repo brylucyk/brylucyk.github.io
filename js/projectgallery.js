@@ -150,14 +150,14 @@ function populateOverlay(imageLocation) {
     $main.append($blurb);
 
     for (let i = 0; i < projects[project[1]]["web"]; i++) {
-        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_web_${i + 1}${projects[project[1]]["ext"]}" class="web-screenshot">`);
+        const $image = $(`<div class="web-wrapper"><img src="./images/screenshots/${project[1]}_recording_web_${i + 1}${projects[project[1]]["ext"]}" class="web-screenshot"></i>`);
         $main.append($image);
     }
 
     const $mobileContainer = $('<div id="mobile-container"></div>');
 
     for (let i = 0; i < projects[project[1]]["mobile"]; i++) {
-        const $image = $(`<img src="./images/screenshots/${project[1]}_recording_mobile_${i + 1}${projects[project[1]]["ext"]}" class="mobile-screenshot">`);
+        const $image = $(`<div class="mobile-wrapper"><img src="./images/screenshots/${project[1]}_recording_mobile_${i + 1}${projects[project[1]]["ext"]}" class="mobile-screenshot"></div>`);
         $main.append($image);
     }
 

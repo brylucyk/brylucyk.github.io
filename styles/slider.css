@@ -79,7 +79,6 @@
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
-
   transform-origin: left bottom;
   transition: transform 0.1s linear;
   -webkit-transition: transform 0.1s linear;
@@ -134,4 +133,43 @@
 .slider-container.animate--end .flex-content {
   transform: translate3d(87vw, 200%, 0);
   opacity: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  .flex-item-left {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    transform-origin: left bottom;
+    transition: transform 0.1s linear;
+    -webkit-transition: transform 0.1s linear;
+    -moz-transition: transform 0.1s linear;
+    -ms-transition: transform 0.1s linear;
+    -o-transition: transform 0.1s linear;
+    opacity: 0;
+    width: 77% !important;
+  }
+
+  .flex-before .flex-item-left,
+  .flex-active .flex-item-left {
+    opacity: 1;
+    width: 77vw;
+  }
+
+  .flex-active {
+    width: 77%;
+    overflow-y: auto;
+    z-index: 5;
+  }
+
+  .slider-container.animate--start .flex-content {
+    transform: translate3d(77vw, -200%, 0);
+    opacity: 0;
+  }
+
+  .slider-container.animate--end .flex-content {
+    transform: translate3d(77vw, 200%, 0);
+    opacity: 0;
+  }
 }

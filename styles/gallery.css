@@ -191,3 +191,47 @@
 #exitButton:hover {
   opacity: 0.7;
 }
+
+@media only screen and (max-width: 1500px) {
+  #overlay #main {
+    width: 75%;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+  }
+
+  .web-wrapper {
+    width: 80%;
+    margin: 2% 0 2% 5% !important;
+  }
+
+  .mobile-wrapper {
+    margin: 2% auto !important;
+    width: 50%;
+  }
+
+  .web-screenshot,
+  .mobile-screenshot {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    margin: 0 !important;
+  }
+  #exitButton {
+    right: 15%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #overlay #main {
+    width: 100%;
+  }
+  #nextButton,
+  #prevButton {
+    display: none;
+  }
+
+  #exitButton {
+    right: 5%;
+  }
+}
