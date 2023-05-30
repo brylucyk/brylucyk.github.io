@@ -24,8 +24,8 @@ body {
   padding: 0;
   width: 100%;
   position: fixed;
-  height: 100%;
-  min-height: 100%;
+  height: 100;
+  min-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -322,12 +322,6 @@ a:hover {
 
 /* contact page */
 
-.contact {
-  z-index: 5;
-  /* subtract navigation width */
-  margin-left: calc(10% - 2em);
-}
-
 #contact-links {
   width: 25%;
   display: flex;
@@ -493,11 +487,13 @@ a:hover {
   }
 
   .contact {
-    display: block !important;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
   }
 
   #contact-links a {
-    margin-right: 1em;
+    margin: 0 1em;
   }
 
   #location {
@@ -533,16 +529,6 @@ a:hover {
 
   .small-logo {
     margin: 0;
-  }
-
-  .contact {
-    width: 100vw;
-    padding: 1em;
-    margin: 0;
-    height: 100vh;
-    position: absolute;
-    top: 100px;
-    left: 50px;
   }
 
   #contact-links {

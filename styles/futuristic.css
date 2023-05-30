@@ -207,10 +207,6 @@ a:hover {
 
 /* contacts page */
 
-.contact {
-  height: auto !important;
-}
-
 #contact-links {
   width: 25%;
   display: flex;

@@ -274,6 +274,10 @@ nav a:hover,
   }
 }
 
+#contact-title {
+  font-size: 2em;
+}
+
 /* for you */
 #license {
   font-family: "Public Sans", sans-serif;
