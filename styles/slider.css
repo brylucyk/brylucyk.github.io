@@ -96,10 +96,17 @@
   -o-transition: transform 0.2s linear 0.2s, opacity 0.5s linear 0.2s;
   padding: 10%;
   height: 100vh;
+  position: absolute;
 }
 
 .slider-nav {
-  padding-top: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  top: 0;
 }
 
 /* Animate-START point */
