@@ -95,6 +95,11 @@
   -ms-transition: transform 0.2s linear 0.2s, opacity 0.5s linear 0.2s;
   -o-transition: transform 0.2s linear 0.2s, opacity 0.5s linear 0.2s;
   padding: 10%;
+  height: 100vh;
+}
+
+.slider-nav {
+  padding-top: 25%;
 }
 
 /* Animate-START point */
