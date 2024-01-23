@@ -113,7 +113,7 @@
 
 .mobile-screenshot {
   height: auto;
-  margin: 2% 80% !important;
+  margin: 2% 50% !important;
 }
 
 #nextButton,
@@ -217,7 +217,7 @@
     margin: 0 !important;
   }
   .mobile-screenshot {
-    width: 30%;
+    width: 20% !important;
   }
   #exitButton {
     right: 20%;
