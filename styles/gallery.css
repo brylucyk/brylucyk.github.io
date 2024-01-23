@@ -216,6 +216,9 @@
     width: 100%;
     margin: 0 !important;
   }
+  .mobile-screenshot {
+    width: 50%;
+  }
   #exitButton {
     right: 20%;
   }
